@@ -1,15 +1,13 @@
+//set variables
 let btn = document.querySelector(".startButton")
 let quiz = document.querySelector(".quizCard")
 let quest = document.querySelector("#quest")
 let timer = 60
 let counter = document.querySelector(".countDown")
-// let choiceBtns = document.querySelector(".choiceBtns")
-// let answerA = document.querySelector("#answerA")
-// let answerB = document.querySelector("#answerB")
-// let answerC = document.querySelector("#answerC")
-// let answerD = document.querySelector("#answerD")
+let checkAnswer = document.querySelector("#checkAnswer")
 
 
+//set questions array
 let questions = [
 //questions and answers taken from sample quiz in assignment's Read Me file
 {
@@ -27,37 +25,81 @@ let questions = [
         choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
         correct:  "parentheses"
 }]
+//set question functions
 function question1(){
     quiz.textContent = questions[0].question1 
     for(let i = 0; i <questions[0].choices.length; i++){
-    console.log(questions[0].choices[i]) 
-    let btn = document.createElement("BUTTON");
-    btn.innerHTML = questions[0].choices[i];   
-    quiz.appendChild(btn)
+    let answerBtn = document.createElement("BUTTON");
+    let checkAnswer = document.createElement("p")
+    answerBtn.innerHTML = questions[0].choices[i];   
+    quiz.appendChild(answerBtn)
+    answerBtn.addEventListener("click", function(event) {
+        if (this.textContent === questions[0].correct) {
+            quiz.appendChild(checkAnswer)
+            checkAnswer.textContent = "Correct"
+        } else {
+            quiz.appendChild(checkAnswer)        
+            checkAnswer.textContent = "Wrong"
+            timer -= 10 
+        }
+    
+    })
+    
     }
 }
 
 function question2(){
-    quiz.textContent = questions[0].question2 
+    quiz.textContent = questions[1].question2 
     for(let i = 0; i <questions[1].choices.length; i++){
-    console.log(questions[1].choices[i]) 
-    let btn = document.createElement("BUTTON");
-    btn.innerHTML = questions[1].choices[i];   
-    quiz.appendChild(btn)
+    let answerBtn = document.createElement("BUTTON");
+    let checkAnswer = document.createElement("p")
+    answerBtn.innerHTML = questions[1].choices[i];   
+    quiz.appendChild(answerBtn)
+    answerBtn.addEventListener("click", function(event) {
+        if (this.textContent === questions[1].correct) {
+            quiz.appendChild(checkAnswer)
+            checkAnswer.textContent = "Correct"
+        } else {
+            quiz.appendChild(checkAnswer)        
+            checkAnswer.textContent = "Wrong" 
+        }
+    
+    })
     }
 }
+
+function question3(){
+    quiz.textContent = questions[2].question3 
+    for(let i = 0; i <questions[2].choices.length; i++){
+    let answerBtn = document.createElement("BUTTON");
+    let checkAnswer = document.createElement("p")
+    answerBtn.innerHTML = questions[2].choices[i];   
+    quiz.appendChild(answerBtn)
+    answerBtn.addEventListener("click", function(event) {
+        if (this.textContent === questions[2].correct) {
+            quiz.appendChild(checkAnswer)
+            checkAnswer.textContent = "Correct"
+        } else {
+            quiz.appendChild(checkAnswer)        
+            checkAnswer.textContent = "Wrong" 
+        }
+    
+    })
+    }
+}
+
+
 function startQuiz() {
     var x = document.querySelector(".beginQuiz");
     x.style.display = "none"
     quiz.style.display = "block"
+    checkAnswer.style.display = "block"
 
     question1()
-    // if (question1() === questions[0].question1[1]) {
-    //     console.log("Correct")s
-    // }
     countDown()  
 }
 
+//Set game timer
 function countDown () {
     
     const myTimer = setInterval(function() {
