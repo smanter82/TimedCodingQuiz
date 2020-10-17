@@ -18,4 +18,6 @@ Reflections:
 4) The order of the code is super important; I fixed many small mistakes along the way by taking correct code that wasn't working and moving it to the appropriate location in the code block.
 
 Deployed Site:  https://smanter82.github.io/TimedCodingQuiz/
+
+
 Code done in collaboration with Wednesday and Saturday study group:  https://github.com/shannonquinn91/Coding-Quiz, https://github.com/dmaysteinman/Code_Quiz, https://github.com/mdjonestwo, Brenda Burns, https://github.com/Ewager1
