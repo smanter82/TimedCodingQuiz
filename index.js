@@ -5,6 +5,7 @@ let quest = document.querySelector("#quest")
 let timer = 60
 let counter = document.querySelector(".countDown")
 let checkAnswer = document.querySelector("#checkAnswer")
+let quizAnswerCard = document.querySelector(".quizAnswerCard")
 
 
 //set questions array
@@ -32,15 +33,19 @@ function question1(){
     let answerBtn = document.createElement("BUTTON");
     let checkAnswer = document.createElement("p")
     answerBtn.innerHTML = questions[0].choices[i];   
-    quiz.appendChild(answerBtn)
+    quizAnswerCard.appendChild(answerBtn)
     answerBtn.addEventListener("click", function(event) {
         if (this.textContent === questions[0].correct) {
             quiz.appendChild(checkAnswer)
             checkAnswer.textContent = "Correct"
+            quizAnswerCard.textContent = " "
+            setTimeout(function(){ question2()}, 1000)
         } else {
             quiz.appendChild(checkAnswer)        
             checkAnswer.textContent = "Wrong"
             timer -= 10 
+            quizAnswerCard.textContent = " "
+            setTimeout(function(){question2()}, 1000)
         }
     
     })
@@ -54,14 +59,18 @@ function question2(){
     let answerBtn = document.createElement("BUTTON");
     let checkAnswer = document.createElement("p")
     answerBtn.innerHTML = questions[1].choices[i];   
-    quiz.appendChild(answerBtn)
+    quizAnswerCard.appendChild(answerBtn)
     answerBtn.addEventListener("click", function(event) {
         if (this.textContent === questions[1].correct) {
             quiz.appendChild(checkAnswer)
             checkAnswer.textContent = "Correct"
+            quizAnswerCard.textContent = " "
+            setTimeout(function(){question3()}, 1000)
         } else {
             quiz.appendChild(checkAnswer)        
-            checkAnswer.textContent = "Wrong" 
+            checkAnswer.textContent = "Wrong"
+            quizAnswerCard.textContent = " "
+            setTimeout(function(){question3()}, 1000) 
         }
     
     })
@@ -74,20 +83,28 @@ function question3(){
     let answerBtn = document.createElement("BUTTON");
     let checkAnswer = document.createElement("p")
     answerBtn.innerHTML = questions[2].choices[i];   
-    quiz.appendChild(answerBtn)
+    quizAnswerCard.appendChild(answerBtn)
     answerBtn.addEventListener("click", function(event) {
         if (this.textContent === questions[2].correct) {
             quiz.appendChild(checkAnswer)
             checkAnswer.textContent = "Correct"
+            quizAnswerCard.textContent = " "
+            setTimeout(function(){endQuiz()}, 1000)
         } else {
             quiz.appendChild(checkAnswer)        
             checkAnswer.textContent = "Wrong" 
+            quizAnswerCard.textContent = " "
+            setTimeout(function(){endQuiz()}, 1000)
         }
+    
     
     })
     }
 }
 
+function endQuiz () {
+    quiz.textContent = "Quiz Finished"
+}
 
 function startQuiz() {
     var x = document.querySelector(".beginQuiz");
