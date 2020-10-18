@@ -1,7 +1,7 @@
 .quizCard {
     display: none;
 }
-
+/* align start page */
 h1 {
     text-align: center;
 }
@@ -13,6 +13,7 @@ h1 {
 #startButton {
     justify-content: center;
 }
+/*center quiz question/answer content*/
 
 .checkAnswer {
     justify-content: center;

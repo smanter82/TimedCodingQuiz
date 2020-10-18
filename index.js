@@ -26,6 +26,33 @@ let questions = [
         choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
         correct:  "parentheses"
 }]
+
+//begin quiz
+function startQuiz() {
+    var x = document.querySelector(".beginQuiz");
+    x.style.display = "none"
+    quiz.style.display = "block"
+    checkAnswer.style.display = "block"
+
+    question1()
+    countDown()  
+}
+
+//Set game timer
+function countDown () {
+    
+    const myTimer = setInterval(function() {
+          //Fix this so that it pops up with expired
+        counter.textContent = timer + " seconds left!"
+        if (timer === 0) {
+            clearInterval(myTimer);
+            counter.textContent = "EXPIRED";}
+        timer--
+        console.log(timer)
+    }, 1000);
+    
+    
+}
 //set question functions
 function question1(){
     quiz.textContent = questions[0].question1 
@@ -102,33 +129,10 @@ function question3(){
     }
 }
 
+//End quiz, and go to high scores
 function endQuiz () {
     quiz.textContent = "Quiz Finished"
 }
 
-function startQuiz() {
-    var x = document.querySelector(".beginQuiz");
-    x.style.display = "none"
-    quiz.style.display = "block"
-    checkAnswer.style.display = "block"
 
-    question1()
-    countDown()  
-}
-
-//Set game timer
-function countDown () {
-    
-    const myTimer = setInterval(function() {
-          //Fix this so that it pops up with expired
-        counter.textContent = timer + " seconds left!"
-        if (timer === 0) {
-            clearInterval(myTimer);
-            counter.textContent = "EXPIRED";}
-        timer--
-        console.log(timer)
-    }, 1000);
-    
-    
-}
 
