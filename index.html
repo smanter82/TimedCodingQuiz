@@ -15,6 +15,7 @@
 <body>
     <nav class="navbar navbar-light bg-light">
         <span class="navbar-brand mb-0 h1 countDown">Countdown</span>
+        <span class="navbar-brand mb-0 h1 yourScore">Your Score</span>
         <a class="nav-link highScores" href="./highscores.html">High Scores <span class="sr-only">(current)</span></a>
     </nav>
     <div class="container">
@@ -28,14 +29,26 @@
         </div>
     </div>
     <div class="container">
-        <div class="quizCard row">
+        <div class="quizCard row d-flex justify-content-center">
             <div class="card">
                     <div id = "checkAnswer">
                     </div>
+                    <div id = "answerFeedback">
+                    </div>
             </div>
         </div>
-        <div class="quizAnswerCard row">
-
+        <div class="quizAnswerCard row d-flex justify-content-center">
+        </div>
+        <div class="row d-flex justify-content-center">
+            <form>
+                <div class="highScoresName form-group">
+                  <label for="inputInitials">Type in your initials to save score.</label>
+                  <input type="text" class="form-control" id="inputInitials">
+                  <div id="myDiv"></div>
+                  <div id = "storageDiv"></div>
+                  <button type="submit" class="btn btn-primary submit">Submit</button>
+                </div>
+              </form>
         </div>
     </div>
 </body>

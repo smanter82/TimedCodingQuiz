@@ -4,9 +4,14 @@ let quiz = document.querySelector(".quizCard")
 let quest = document.querySelector("#quest")
 let timer = 60
 let counter = document.querySelector(".countDown")
+let yourScore = document.querySelector(".yourScore")
 let checkAnswer = document.querySelector("#checkAnswer")
 let quizAnswerCard = document.querySelector(".quizAnswerCard")
-
+let highScoresName = document.querySelector(".highScoresName")
+let score = 0
+yourScore.textContent = "Your score = " + score
+let submit = document.querySelector(".submit")
+let inputInitials = document.querySelector(".inputInitials")
 
 //set questions array
 let questions = [
@@ -17,15 +22,17 @@ let questions = [
         correct:  "alerts"
 },
 {
-    question2: "String values must be enclosed within _____ when being assigned to variables:",
-        choices: ["commas", "curly brackets", "quotes", "parentheses"],
-        correct:  "parentheses"
+    question2: "Arrays in JavaScript can be used to store:",
+        choices: ["numbers and strings", "other arrays", "booleans", "all of the above"],
+        correct:  "all of the above"
 },
 {
     question3: "The condition in an if/else statement is enclosed within ____.:",
         choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
         correct:  "parentheses"
 }]
+
+highScoresName.style.display = "none"
 
 //begin quiz
 function startQuiz() {
@@ -46,7 +53,7 @@ function countDown () {
         counter.textContent = timer + " seconds left!"
         if (timer === 0) {
             clearInterval(myTimer);
-            counter.textContent = "EXPIRED";}
+            counter.textContent = "Game Over";}
         timer--
         console.log(timer)
     }, 1000);
@@ -66,6 +73,8 @@ function question1(){
             quiz.appendChild(checkAnswer)
             checkAnswer.textContent = "Correct"
             quizAnswerCard.textContent = " "
+            score += 5
+            yourScore.textContent = "Your score = " + score
             setTimeout(function(){ question2()}, 1000)
         } else {
             quiz.appendChild(checkAnswer)        
@@ -92,6 +101,9 @@ function question2(){
             quiz.appendChild(checkAnswer)
             checkAnswer.textContent = "Correct"
             quizAnswerCard.textContent = " "
+            score += 5
+            yourScore.textContent = "Your score = " + score
+            console.log(score)
             setTimeout(function(){question3()}, 1000)
         } else {
             quiz.appendChild(checkAnswer)        
@@ -116,6 +128,9 @@ function question3(){
             quiz.appendChild(checkAnswer)
             checkAnswer.textContent = "Correct"
             quizAnswerCard.textContent = " "
+            score +=5
+            yourScore.textContent = "Your score = " + score
+            console.log(score)
             setTimeout(function(){endQuiz()}, 1000)
         } else {
             quiz.appendChild(checkAnswer)        
@@ -131,8 +146,28 @@ function question3(){
 
 //End quiz, and go to high scores
 function endQuiz () {
-    quiz.textContent = "Quiz Finished"
+    timer = 0
+    quiz.textContent = "Quiz Finished!"
+    highScoresName.style.display = "block"
+    submit.addEventListener("click", function(event) {
+        privateData.push(enterInitials)
+        quiz.textContent = "Quiz Finished!" + inputInitials
+    })
 }
+
+//set local storage and form for high scores
+let privateData = []
+const storage = document.getElementById("storageDiv")
+const div = document.getElementById("myDiv")
+
+div.textContent = privateData
+storage.textContent = JSON.parse(localStorage.getItem("privateData"))
+
+function updateData() {
+    localStorage.setItem("privateData", JSON.stringify(privateData))
+    div.textContent = privateData
+}
+
 
 
 
