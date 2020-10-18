@@ -20,4 +20,4 @@ Reflections:
 Deployed Site:  https://smanter82.github.io/TimedCodingQuiz/
 
 
-Code done in collaboration with Wednesday and Saturday study group:  https://github.com/shannonquinn91/Coding-Quiz, https://github.com/dmaysteinman/Code_Quiz, https://github.com/mdjonestwo, Brenda Burns, https://github.com/Ewager1
+Code done in collaboration with Wednesday and Saturday study group:  https://github.com/shannonquinn91/Coding-Quiz, https://github.com/dmaysteinman/Code_Quiz, https://github.com/mdjonestwo, Brenda Burns, https://github.com/Ewager1, Jesal Mehta
