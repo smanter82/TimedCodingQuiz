@@ -1,5 +1,5 @@
 //set variables
-let btn = document.querySelector(".startButton")
+let startBtn = document.querySelector(".startButton")
 let quiz = document.querySelector(".quizCard")
 let quest = document.querySelector("#quest")
 let timer = 60
@@ -10,8 +10,10 @@ let quizAnswerCard = document.querySelector(".quizAnswerCard")
 let highScoresName = document.querySelector(".highScoresName")
 let score = 0
 yourScore.textContent = "Your score = " + score
-let submit = document.querySelector(".submit")
+let submit = document.querySelector(".submitButton")
 let inputInitials = document.querySelector(".inputInitials")
+let inputBtn = document.querySelector(".hsPage")
+let index = true
 
 //set questions array
 let questions = [
@@ -32,12 +34,14 @@ let questions = [
         correct:  "parentheses"
 }]
 
-highScoresName.style.display = "none"
+if (index === true) {   
+    highScoresName.style.display = "none"
+}
 
 //begin quiz
 function startQuiz() {
-    var x = document.querySelector(".beginQuiz");
-    x.style.display = "none"
+    var directions = document.querySelector(".beginQuiz");
+    directions.style.display = "none"
     quiz.style.display = "block"
     checkAnswer.style.display = "block"
 
@@ -149,25 +153,26 @@ function endQuiz () {
     timer = 0
     quiz.textContent = "Quiz Finished!"
     highScoresName.style.display = "block"
-    submit.addEventListener("click", function(event) {
-        privateData.push(enterInitials)
-        quiz.textContent = "Quiz Finished!" + inputInitials
-    })
+
 }
 
 //set local storage and form for high scores
-let privateData = []
-const storage = document.getElementById("storageDiv")
-const div = document.getElementById("myDiv")
+// let privateData = []
+// const storage = document.getElementById("storageDiv")
+// const div = document.getElementById("myDiv")
 
-div.textContent = privateData
-storage.textContent = JSON.parse(localStorage.getItem("privateData"))
+// div.textContent = privateData
+// storage.textContent = JSON.parse(localStorage.getItem("privateData"))
 
-function updateData() {
-    localStorage.setItem("privateData", JSON.stringify(privateData))
-    div.textContent = privateData
-}
+// function updateData() {
+//     localStorage.setItem("privateData", JSON.stringify(privateData))
+//     div.textContent = privateData
+// }
+inputBtn.addEventListener ("click", function(){
+    console.log("hello")
+    window.location.href = "./highscores.html"
+})
 
-
-
+// privateData.push(enterInitials)
+//         quiz.textContent = "Quiz Finished!" + inputInitials
 

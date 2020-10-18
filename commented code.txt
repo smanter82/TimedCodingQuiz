@@ -1,0 +1,19 @@
+//for high scores page
+// scoreList.textContent = inputInitials
+// submitButton.addEventListener ("click", function() {
+//     scoreList.textContent = inputInitials.nodeValue + "Score" + score
+// })
+
+
+//set local storage and form for high scores
+// let privateData = []
+// const storage = document.getElementById("storageDiv")
+// const div = document.getElementById("myDiv")
+
+// div.textContent = privateData
+// storage.textContent = JSON.parse(localStorage.getItem("privateData"))
+
+// function updateData() {
+//     localStorage.setItem("privateData", JSON.stringify(privateData))
+//     div.textContent = privateData
+// }
