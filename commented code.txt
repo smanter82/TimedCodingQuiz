@@ -17,3 +17,4 @@
 //     localStorage.setItem("privateData", JSON.stringify(privateData))
 //     div.textContent = privateData
 // }
+let submit = document.querySelector(".submitButton")

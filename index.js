@@ -9,11 +9,8 @@ let checkAnswer = document.querySelector("#checkAnswer")
 let quizAnswerCard = document.querySelector(".quizAnswerCard")
 let highScoresName = document.querySelector(".highScoresName")
 let score = 0
-yourScore.textContent = "Your score = " + score
-let submit = document.querySelector(".submitButton")
-let inputInitials = document.querySelector(".inputInitials")
 let inputBtn = document.querySelector(".hsPage")
-let index = true
+yourScore.textContent = "Your score = " + score
 
 //set questions array
 let questions = [
@@ -34,9 +31,8 @@ let questions = [
         correct:  "parentheses"
 }]
 
-if (index === true) {   
-    highScoresName.style.display = "none"
-}
+//Only show directions and start button on loading site
+highScoresName.style.display = "none"
 
 //begin quiz
 function startQuiz() {
@@ -66,7 +62,7 @@ function countDown () {
 }
 //set question functions
 function question1(){
-    quiz.textContent = questions[0].question1 
+    quiz.textContent = questions[0].question1
     for(let i = 0; i <questions[0].choices.length; i++){
     let answerBtn = document.createElement("BUTTON");
     let checkAnswer = document.createElement("p")
@@ -148,31 +144,15 @@ function question3(){
     }
 }
 
-//End quiz, and go to high scores
+//End quiz, and go to high scores.
 function endQuiz () {
     timer = 0
     quiz.textContent = "Quiz Finished!"
     highScoresName.style.display = "block"
-
+    localStorage.setItem("score", score)
 }
 
-//set local storage and form for high scores
-// let privateData = []
-// const storage = document.getElementById("storageDiv")
-// const div = document.getElementById("myDiv")
-
-// div.textContent = privateData
-// storage.textContent = JSON.parse(localStorage.getItem("privateData"))
-
-// function updateData() {
-//     localStorage.setItem("privateData", JSON.stringify(privateData))
-//     div.textContent = privateData
-// }
 inputBtn.addEventListener ("click", function(){
     console.log("hello")
     window.location.href = "./highscores.html"
 })
-
-// privateData.push(enterInitials)
-//         quiz.textContent = "Quiz Finished!" + inputInitials
-
