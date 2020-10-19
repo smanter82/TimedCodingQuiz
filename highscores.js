@@ -1,11 +1,11 @@
-// let inputInitials = document.getElementById("inputInitials").innerHTML
-// let submitButton = document.querySelector(".submitButton")
+let inputInitials = document.getElementById("inputInitials")
+let submitButton = document.querySelector(".submitButton")
+let initials = inputInitials.textContent
 
-// submitButton.addEventListener("click", function(event){
 
-//     event.preventDefault
-//     console.log(inputInitials)
-//     localStorage.setItem("initials", inputInitials)
-// })
+submitButton.addEventListener("click", function(event){
+    event.preventDefault
+    console.log(initials)
+})
 
 
