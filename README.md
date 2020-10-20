@@ -12,10 +12,13 @@ When the game is over, the player saves his/her initials and score to a high sco
 
 Reflections:
 
-1) I learned to better navigate functions in JavaScript.
-2) I gained a better understanding of referencing objects in an array.
-3) I learned how to locally store data.
-4) The order of the code is super important; I fixed many small mistakes along the way by taking correct code that wasn't working and moving it to the appropriate location in the code block.
+I learned:
+1) To better navigate functions in JavaScript.
+2) How to better reference objects in an array.
+3) How to locally store data.
+4) That the order of the code is super important; I fixed many small mistakes along the way by taking correct code that wasn't working and moving it to the appropriate location in the code block.
+5) That flow of the submit buttons is important once multiple users are working on the same thing.
+6) How to store items to an array in local storage and then pull data from the local storage array to put into text on the page.
 
 Deployed Site:  https://smanter82.github.io/TimedCodingQuiz/
 

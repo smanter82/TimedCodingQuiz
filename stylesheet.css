@@ -1,7 +1,9 @@
+/*
+
 .quizCard {
     display: none;
 }
-/* align start page */
+/* align start page and questions to center */
 h1 {
     text-align: center;
 }
