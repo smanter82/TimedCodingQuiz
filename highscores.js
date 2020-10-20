@@ -1,14 +1,21 @@
 let inputInitials = document.getElementById("inputInitials")
-let submitButton = document.querySelector(".submitButton")
-let initials = inputInitials.textContent
 let yourScore = document.querySelector(".yourScore")
 let score = localStorage.getItem("score")
+let highScore = localStorage.getItem("highScore")
+let submitButton = document.querySelector(".submitButton")
+let listScores = document.querySelector(".listScores")
+let list = document.createElement("li")
+const highScores = JSON.parse(localStorage.getItem("scoresArr")) || [];
 
 submitButton.addEventListener("click", function(event){
-    event.preventDefault
-    console.log(initials)
+    let initials = inputInitials.value
+    listScores.appendChild(list)
+    let savedEntry = initials + " : " + score
+    highScores.push(savedEntry)
+    console.log(highScores)
+    list.textContent = highScores
 })
 
-
 yourScore.textContent = "Your score = " + score
+
 
