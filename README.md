@@ -20,6 +20,10 @@ I learned:
 5) That flow of the submit buttons is important once multiple users are working on the same thing.
 6) How to store items to an array in local storage and then pull data from the local storage array to put into text on the page.
 
+![Screenshot1 of Website](./Screenshot1.png)
+![Screenshot2 of Website](./Screenshot2.png)
+![Screenshot3 of Website](./Screenshot3.png)
+
 Deployed Site:  https://smanter82.github.io/TimedCodingQuiz/
 
 
