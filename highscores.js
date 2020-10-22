@@ -17,7 +17,7 @@ for (var i = 0; i<highScores.length; i++ ) {
 //Submit initials to High Scores list with most recently earned score
 submitButton.addEventListener("click", function(event){
 
-     event.preventDefault()
+    event.preventDefault()
     let list = document.createElement("li")  
     let initials = inputInitials.value
     console.log(initials)
